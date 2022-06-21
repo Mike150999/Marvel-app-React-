@@ -34,18 +34,20 @@ const CharInfo = (props) => {
 	}
 
 	const onCharLoaded = (char) => {
+		setLoading(loading => false);
 		setChar(char);
-		setLoading(loading => false);
-	}
-
-	const onError = () => {
-		setLoading(loading => false);
-		setError(error => true);
 	}
 
 	const onCharLoading = () => {
+		setLoading(true);
+	}
+
+	const onError = () => {
+		setError(error => true);
 		setLoading(loading => false);
 	}
+
+
 
 	const skeleton = char || loading || error ? null : <Skeleton />;
 	const errorMessage = error ? <ErrorMessage /> : null;
