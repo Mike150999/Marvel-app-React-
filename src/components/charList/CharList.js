@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from 'react';
 import Spinner from '../spinner/Spinner';
 import ErrorMessage from '../errorMessage/ErrorMessage';
 import useMarvelService from '../../services/MarvelService';
+import PropTypes from 'prop-types';
 import './charList.scss';
 
 const CharList = (props) => {
@@ -35,6 +36,7 @@ const CharList = (props) => {
 		setOfsset(offset => offset + 9);
 		setCharEnded(charEnded => ended);
 	}
+
 
 	const itemsRefs = useRef([]);
 
@@ -104,8 +106,8 @@ const CharList = (props) => {
 
 }
 
-// CharList.propTypes = {
-// 	onCharSelected: PropTypes.func.isRequired
-// }
-
+CharList.propTypes = {
+	onCharSelected: PropTypes.func.isRequired
+}
 export default CharList;
+
