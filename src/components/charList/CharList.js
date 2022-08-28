@@ -26,6 +26,7 @@ const CharList = (props) => {
 
 
 	const onComicsListLoaded = (newCharList) => {
+
 		let ended = false;
 		if (newCharList.lenght < 9) {
 			ended = true;
@@ -88,6 +89,8 @@ const CharList = (props) => {
 
 	const errorMessage = error ? <ErrorMessage /> : null;
 	const spinner = loading && !newItemLoading ? <Spinner /> : null;
+
+
 
 	return (
 		<div className="char__list">
